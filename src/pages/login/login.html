@@ -3,7 +3,7 @@
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
--->
+
 <ion-header>
 
   <ion-navbar>
@@ -11,8 +11,42 @@
   </ion-navbar>
 
 </ion-header>
+-->
 
+<ion-content padding> 
+   <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col class="content-logo" col-8 justify-content-center>
+          <img src="./assets/imgs/logo_home.png" />
+        </ion-col>
+      </ion-row>
 
-<ion-content padding>
+      <ion-row justify-content-start>
+        <ion-col col-12 text-center text-uppercase  >
+           <ion-title color="dark">Iniciar Session:</ion-title>
+        </ion-col>
+        <ion-col col-12 >
+              <ion-item>
+                <ion-label color="primary"  floating>Correo electronico</ion-label>
+                <ion-input type="text"  #username></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary"  floating>Contraseña</ion-label>
+                <ion-input type="password" #password></ion-input>
+              </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><button (click)="loginApp()" ion-button block>Ingresar</button></ion-col>
+        <ion-col col-6><button (click)="goToRegister()" ion-button block color="dark">Registrarme</button></ion-col>
+      </ion-row>
+      <ion-row justify-content-start text-center margin-top>
+        <ion-col col-12 text-center text-uppercase  >
+          <div class="card-subtitle">Ingresar con:</div>
+        </ion-col>
+        <ion-col col-6><img src="./assets/icon/facebook.png" width="50px" height="50px"/> </ion-col>
+        <ion-col col-6><img src="./assets/icon/google-plus.png" width="50px" height="50px"/></ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>
