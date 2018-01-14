@@ -21,23 +21,23 @@
     <ion-col col-12>
       <ion-list>
         <ion-item>
+            <ion-label color="primary" floating>Nombre</ion-label>
+            <ion-input type="text" #uName></ion-input>
+        </ion-item>
+        <ion-item>
             <ion-label color="primary" floating>Correo electronico</ion-label>
-            <ion-input></ion-input>
+            <ion-input type="text" #uEmail></ion-input>
         </ion-item>
         <ion-item>
             <ion-label color="primary" floating>Contraseña</ion-label>
-            <ion-input></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>Confirmar contraseña</ion-label>
-            <ion-input></ion-input>
+            <ion-input type="password" #uPwd></ion-input>
         </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
   <ion-row justify-content-around>
     <ion-col col-8 >
-      <button ion-button block>Registrarme</button>
+      <button ion-button block (click)="register()">Registrarme</button>
     </ion-col>
     <!--<ion-col col-6>
       <button ion-button block color="danger">Cancelar</button>

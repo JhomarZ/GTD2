@@ -1,0 +1,1 @@
+export let SERVER_NAME = "http://www.grandestorneos.com/JSON/User.aspx?";

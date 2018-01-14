@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { RegisterPage } from '../register/register';
 import { AuhtProvider } from '../../providers/auht/auht';
+import { HomePage } from '../home/home';
 
 
 /**
@@ -22,7 +23,7 @@ export class LoginPage {
    //private frmLogin : FormGroup;
    @ViewChild("username") username;
    @ViewChild("password") password;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public formBuilder: FormBuilder,
+  constructor(public navCtrl: NavController, public navParams: NavParams,private storage: Storage,
               public auhtProvider:AuhtProvider,private alertCtrl: AlertController) {
 
      
@@ -35,14 +36,15 @@ export class LoginPage {
 
   loginApp(){
     //this.presentAlert(); return;
-    console.log(this.username);
+    if(this.validateform()===false) return; // vaidamos los campos del formulario
     this.auhtProvider.login(this.username.value,this.password.value)
     .subscribe(
       (data)=>{
         console.log("data");
         console.log(data.records[0]);
         if(data.records[0].msgcod===true){
-          this.presentAlert("Exito","Ingreso correctamento");
+          this.saveUser(data.records[0].Table);
+          this.gotohome();
         }
         else
         {
@@ -64,4 +66,27 @@ export class LoginPage {
     });
     alert.present();
   }
+
+  saveUser(user:any){
+    console.log(user);
+    this.storage.set('user',user);
+    console.log()
+  }
+  gotohome(){
+   this.navCtrl.setRoot(HomePage);
+  }
+
+  validateform(){
+     if(this.username.value===""){
+        this.presentAlert("Ingreso Fallo","Ingresar Nombre");
+        return false;
+     }
+     if(this.password.value===""){
+       this.presentAlert("Ingreso Fallo","Ingresar correo");
+       return false;
+     }
+     return true;
+  }
+ 
+   
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
+import {SERVER_NAME} from './../config';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -20,8 +21,14 @@ export class AuhtProvider {
   }
 
   login(username,password):Observable<any>{
-    console.log("http://www.grandestorneos.com/JSON/User.aspx?t=access&uEmail="+username+"&uPwd="+password);
-    return this.http.get("http://www.grandestorneos.com/JSON/User.aspx?t=access&uEmail="+username+"&uPwd="+password)
+    console.log(SERVER_NAME+"t=access&uEmail="+username+"&uPwd="+password);
+    return this.http.get(SERVER_NAME+"t=access&uEmail="+username+"&uPwd="+password)
+    .map(res => res);
+  }
+
+  register(uName,uEmail,uPwd):Observable<any>{
+    console.log(SERVER_NAME+"t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd);
+    return this.http.get(SERVER_NAME+"t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd)
     .map(res => res);
   }
 
