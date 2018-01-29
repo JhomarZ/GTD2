@@ -13,7 +13,7 @@
         <ion-col col-12 >
               <ion-item>
                 <ion-label color="primary"  floating>Correo electronico</ion-label>
-                <ion-input type="text"  #username></ion-input>
+                <ion-input type="email"  #username></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label color="primary"  floating>Contraseña</ion-label>
@@ -21,6 +21,7 @@
               </ion-item>
         </ion-col>
       </ion-row>
+      <br>
       <ion-row>
         <ion-col col-6><button (click)="loginApp()" ion-button block>Ingresar</button></ion-col>
         <ion-col col-6><button (click)="goToRegister()" ion-button block color="dark">Registrarme</button></ion-col>

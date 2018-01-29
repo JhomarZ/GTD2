@@ -1,3 +1,143 @@
 page-home {
+    .title-bg{
+            background-color: #dadada;
+    }
+    .card-content-md {
+        padding: 0px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    .card-match{
+        .item-md{
+            padding-left: 0px;
+        }
+        .head{
+            font-size: 1.5rem;
+            img{
+                width:14px;
+                float:left;
+                margin:0px;
+            }
+            ion-label{
+                margin: 0px;
+            }
+        }
+        .content-card{
+            text-align: center;
+            .team{
+                text-align: -webkit-center;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                img{
+                    width:35px;
+                    margin:0px;
+                }
+                .name{
+                    line-height: 1;
+                }
+            }
+            .score{
+                font-size:2.5rem;
+                font-weight: 800;
+            }
+            .vs{
+                font-size:1.5rem; 
+                color:#253679;
+                font-weight: 800;
+            }
+            .status{
+                background-color:  #e0e0e0;
+                font-weight: 800;
+            }
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            border-top: 1px solid #e0e0e0;
+            font-size: 1.3rem;
+            color: #999;
+            img{
+                width:14px;
+                float:left;
+                margin:0px;
+            }
+            .col{
+                padding: 2px;
+            }
+        }
+    }
 
+    [data-letters]:before {
+    content:attr(data-letters);
+    display:inline-block;
+    font-size:1em;
+    width:2.5em;
+    height:2.5em;
+    line-height:2.5em;
+    text-align:center;
+    border-radius:50%;
+    background:#253679;
+    vertical-align:middle;
+    margin-right:1em;
+    color:white;
+    }
+
+    ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 120px;
+    overflow: hidden;
+    
+    .name{
+        font-size: 1.5rem;
+        overflow: auto;
+    }
+    .scroll-content{
+        padding: 5px !important;
+
+        ion-avatar{
+            img{
+                margin: 0px;
+            }
+        }
+    }
+
+    .scroll-item {
+      display: inline-block;
+    }
+
+    .selectable-icon{
+      margin: 10px 20px 10px 20px;
+      color: red;
+      font-size: 100px;
+    }
+
+    ion-avatar{
+        text-align: center;
+        img{
+        margin: 10px;
+        height: 60px;
+        width: 60px;
+        }
+    } 
+
+
+
+  }
+
+  ion-scroll[scroll-avatar]{
+    height: 100px;
+  }
+
+  /* Hide ion-content scrollbar */
+  ::-webkit-scrollbar{
+    display:none;
+  }
+
+
+}
+
+ion-app.md [padding] .scroll-content {
+        padding: 5px;
 }

@@ -1,15 +1,133 @@
-<ion-header >
-  <ion-navbar>
+<ion-header  >
+  <ion-navbar color="primary">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button icon-only  (click)="goToFavoritePage()"> 
+        <!--<ion-icon name="menu"></ion-icon>-->
+       <img src="./assets/icon/favorite.png" style="    width: 30px;" >
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Home de GTD</h2>
-  <p>
-    Deberiamos mostrar los ultimos partidos
-  </p>
+  
+  <!--<ion-scroll scrollX="true" direction="x">
+    <ion-card *ngFor="let item of listCardsAdventure">
+      <ion-card-content>
+        <ion-card-title>
+          {{ item.title }}
+          </ion-card-title>
+        <button ion-item (click)="openDetailActivity(item)">            
+          More info
+          <ion-icon name="arrow-forward" item-right color="primary"></ion-icon>
+        </button>
+      </ion-card-content>
+    </ion-card>
+  </ion-scroll> -->
+  
+  <ion-row>
+    <ion-col col-12 class="title-bg"><b>Deportistas Destacados</b></ion-col>
+    <ion-item no-lines>
+    <ion-scroll scrollX="true" >
+       <!-- <ion-avatar>-->
+          <ion-row nowrap class="top-players">
+            <ion-col col-4 col-sm-3 col-md-3 col-lg-2 col-xl-1
+              *ngFor="let player of playersTop" >
+              <ion-row>
+                <ion-col col-12>
+                  <ion-avatar>
+                    <img src="./assets/imgs/avatar/player.png"  class="scroll-item"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col class="name">
+                  {{ player.name }}
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+    </ion-scroll>
+    </ion-item>
+  </ion-row>
+  <br>
+  
+  <ion-row>
+    <ion-col col-12 class="title-bg"><b>Ultimos resultados</b></ion-col>
+    <ion-col col-12 *ngFor="let match of matchs" >
+      <b>{{match.day}}</b>
+        <ion-card class="card-match">
+          <ion-item class="head">
+            <ion-row>
+              <ion-col col-8>
+                <img item-start src="./assets/imgs/tournament/cup.png" >
+                 &nbsp; {{match.tournament}}
+              </ion-col>
+              <ion-col col-4>
+                <span style="float:right;">{{match.fecha}}</span>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+
+          <ion-card-content class="content-card">
+            <ion-row>
+              <ion-col class="team" col-4>
+                  <ion-row>
+                    <ion-col  col-12>
+                      <img src="{{match.imgTeam1}}" >
+                    </ion-col>
+                    <ion-col class="name" col-12>
+                      {{match.teamName1}}
+                    </ion-col>
+                  </ion-row>
+              </ion-col>
+              <ion-col col-4>
+                <ion-row>
+                  <ion-col col-4 ><h2 class="score">{{match.scoreTeam1}}</h2></ion-col>
+                  <ion-col col-4 class="vs">VS</ion-col>
+                  <ion-col col-4 ><h2 class="score">{{match.scoreTeam2}}</h2></ion-col>
+                  <ion-col col-12 class="status">{{match.status}}</ion-col>
+                </ion-row>
+              </ion-col>
+              <ion-col col-4>
+                  <ion-row class="team">
+                    <ion-col col-12 >
+                      <img src="{{match.imgTeam2}}" >
+                    </ion-col>
+                    <ion-col col-12 class="name">
+                      {{match.teamName2}}
+                    </ion-col>
+                  </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+          <ion-row class="footer" >
+            <ion-col col-8>
+              <ion-row >
+                <ion-col col-12>
+                  <img item-start src="./assets/icon/location-point.png" >
+                  &nbsp;{{match.date}}
+                </ion-col>
+                <ion-col col-12>
+                  <img item-start src="./assets/icon/calendar.png" >
+                  &nbsp;{{match.place}}
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-button small>Resumen</button>
+            </ion-col>
+           
+          </ion-row>
+
+        </ion-card>
+
+      
+    </ion-col>
+  </ion-row>
+  
 </ion-content>

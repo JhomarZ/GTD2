@@ -10,10 +10,13 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { FavoritesPage } from '../pages/favorites/favorites';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuhtProvider } from '../providers/auht/auht';
+import { PlayerProvider } from '../providers/player/player';
+import { TournamentProvider } from '../providers/tournament/tournament';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -25,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     LoginPage,
     RegisterPage,
+    FavoritesPage,
     TabsPage    
   ],
   imports: [
@@ -41,13 +45,16 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     LoginPage,
     RegisterPage,
+    FavoritesPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuhtProvider
+    AuhtProvider,
+    PlayerProvider,
+    TournamentProvider
   ]
 })
 export class AppModule {}

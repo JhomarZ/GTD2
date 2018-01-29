@@ -43,7 +43,7 @@ export class LoginPage {
         console.log("data");
         console.log(data.records[0]);
         if(data.records[0].msgcod===true){
-          this.saveUser(data.records[0].Table);
+          this.saveUser(data.records[0].Table[0]);
           this.gotohome();
         }
         else
