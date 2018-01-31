@@ -21,14 +21,14 @@ export class AuhtProvider {
   }
 
   login(username,password):Observable<any>{
-    console.log(SERVER_NAME+"t=access&uEmail="+username+"&uPwd="+password);
-    return this.http.get(SERVER_NAME+"t=access&uEmail="+username+"&uPwd="+password)
+    console.log(SERVER_NAME+"User.aspx?t=access&uEmail="+username+"&uPwd="+password);
+    return this.http.get(SERVER_NAME+"User.aspx?t=access&uEmail="+username+"&uPwd="+password)
     .map(res => res);
   }
 
   register(uName,uEmail,uPwd):Observable<any>{
-    console.log(SERVER_NAME+"t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd);
-    return this.http.get(SERVER_NAME+"t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd)
+    console.log(SERVER_NAME+"User.aspx?t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd);
+    return this.http.get(SERVER_NAME+"User.aspx?t=register&uName="+uName+"&uEmail="+uEmail+"&uPwd="+uPwd)
     .map(res => res);
   }
 

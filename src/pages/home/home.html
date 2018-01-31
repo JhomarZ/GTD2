@@ -57,17 +57,17 @@
   
   <ion-row>
     <ion-col col-12 class="title-bg"><b>Ultimos resultados</b></ion-col>
-    <ion-col col-12 *ngFor="let match of matchs" >
-      <b>{{match.day}}</b>
+    <ion-col col-12 *ngFor="let feed of newsFeeds" >
+      <b>{{feed.lastStartDate}}</b>
         <ion-card class="card-match">
           <ion-item class="head">
             <ion-row>
               <ion-col col-8>
                 <img item-start src="./assets/imgs/tournament/cup.png" >
-                 &nbsp; {{match.tournament}}
+                 &nbsp; {{feed.TournamentSN}}
               </ion-col>
               <ion-col col-4>
-                <span style="float:right;">{{match.fecha}}</span>
+                <span style="float:right;">{{feed.Category}}</span>
               </ion-col>
             </ion-row>
           </ion-item>
@@ -77,28 +77,28 @@
               <ion-col class="team" col-4>
                   <ion-row>
                     <ion-col  col-12>
-                      <img src="{{match.imgTeam1}}" >
+                      <img src="{{feed.LogoTeam1}}" >
                     </ion-col>
                     <ion-col class="name" col-12>
-                      {{match.teamName1}}
+                      {{feed.Team1SN}}
                     </ion-col>
                   </ion-row>
               </ion-col>
               <ion-col col-4>
                 <ion-row>
-                  <ion-col col-4 ><h2 class="score">{{match.scoreTeam1}}</h2></ion-col>
+                  <ion-col col-4 ><h2 class="score">{{feed.PointsTeam1}}</h2></ion-col>
                   <ion-col col-4 class="vs">VS</ion-col>
-                  <ion-col col-4 ><h2 class="score">{{match.scoreTeam2}}</h2></ion-col>
-                  <ion-col col-12 class="status">{{match.status}}</ion-col>
+                  <ion-col col-4 ><h2 class="score">{{feed.PointsTeam2}}</h2></ion-col>
+                  <ion-col col-12 class="status">{{feed.status}}</ion-col>
                 </ion-row>
               </ion-col>
               <ion-col col-4>
                   <ion-row class="team">
                     <ion-col col-12 >
-                      <img src="{{match.imgTeam2}}" >
+                      <img src="{{feed.LogoTeam2}}" > 
                     </ion-col>
                     <ion-col col-12 class="name">
-                      {{match.teamName2}}
+                      {{feed.Team2SN}}
                     </ion-col>
                   </ion-row>
               </ion-col>
@@ -109,12 +109,13 @@
             <ion-col col-8>
               <ion-row >
                 <ion-col col-12>
-                  <img item-start src="./assets/icon/location-point.png" >
-                  &nbsp;{{match.date}}
+                  <img item-start src="./assets/icon/calendar.png" >
+                  &nbsp;{{feed.StartDate}}
                 </ion-col>
                 <ion-col col-12>
-                  <img item-start src="./assets/icon/calendar.png" >
-                  &nbsp;{{match.place}}
+                  <img item-start src="./assets/icon/location-point.png" >
+                  &nbsp;{{feed.TournamentGUID}}
+                  
                 </ion-col>
               </ion-row>
             </ion-col>

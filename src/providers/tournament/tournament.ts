@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import {HttpClientModule} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
-import {SERVER_NAME} from './../config';
+import {SERVER_NAME,SERVER_PATH_IMG} from './../config';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -14,9 +14,9 @@ export class TournamentProvider {
     console.log('Hello Players Provider');
   }
 
-  getMatch(userId):Observable<any>{
-    //console.log(SERVER_NAME+"t=access&uEmail="+username+"&uPwd="+password);
-    return this.http.get("../../assets/services/matchs.json")
+  getNewsFeed(userId,rows):Observable<any>{
+    console.log(SERVER_NAME+"NewsFeed.aspx?uId=15&rs=1&rc=5");
+    return this.http.get(SERVER_NAME+"NewsFeed.aspx?uId=15&rs=1&rc=5")
     .map(res => res);
   }
 
