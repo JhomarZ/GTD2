@@ -44,17 +44,19 @@ export class HomePage {
     this.playerProvider.getPlayersTop(this.user.usr_id)
     .subscribe(
       (data)=>{
-        console.log("data");
+        console.log("data player");
         this.playersTop=data;
       }); 
   }
 
-  getNewsFeed(){
+  getNewsFeed(infiniteScroll=null){
     
-    this.tournamentProvider.getNewsFeed(this.user.usr_id,5)
+    this.tournamentProvider.getNewsFeed(this.user.usr_id,this.newsFeeds.length)
     .subscribe(
       (data)=>{
         console.log("data");
+        console.log(data.records[0]);
+        console.log("total="+data.records[0].Table.length);
         //console.log(data);
         //this.newsFeeds=data;
         if(data.records[0].Table.length >0){
@@ -75,6 +77,7 @@ export class HomePage {
             this.newsFeeds.push(data.records[0].Table[feedKey]);
 
           }
+          if(infiniteScroll!=null){ infiniteScroll.complete(); }  //para detener el scroll
           
         }
         /*else
@@ -91,6 +94,13 @@ export class HomePage {
   
   goToFavoritePage(){
     this.navCtrl.push(FavoritesPage);
+  }
+
+  doInfinite(infiniteScroll){
+    console.log("buscar");
+    //infiniteScroll.complete();
+    this.getNewsFeed(infiniteScroll);
+    //this.getNewsFeed(this.fbGuid,infiniteScroll);
   }
 
 }

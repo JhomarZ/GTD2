@@ -15,8 +15,8 @@ export class TournamentProvider {
   }
 
   getNewsFeed(userId,rows):Observable<any>{
-    console.log(SERVER_NAME+"NewsFeed.aspx?uId=15&rs=1&rc=5");
-    return this.http.get(SERVER_NAME+"NewsFeed.aspx?uId=15&rs=1&rc=5")
+    console.log(SERVER_NAME+"NewsFeed.aspx?uId=15&rs="+rows+"&rc=5");
+    return this.http.get(SERVER_NAME+"NewsFeed.aspx?uId=15&rs="+rows+"&rc=5")
     .map(res => res);
   }
 
