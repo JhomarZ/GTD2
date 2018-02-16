@@ -135,7 +135,9 @@ page-home {
     display:none;
   }
 
-
+  .swiper-slide{
+        overflow-y: scroll;
+  }
 }
 
 ion-app.md [padding] .scroll-content {
