@@ -7,6 +7,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
+import { TournamentsPage } from '../pages/tournaments/tournaments';
 import { RegisterPage } from '../pages/register/register';
 import { AuhtProvider } from '../providers/auht/auht';
 
@@ -31,7 +32,7 @@ export class MyApp {
       // verifica si un usuario ya esta logeado y lo redirecciona la home
       this.storage.get('user').then((user) => {
         if(user!=null)
-          this.rootPage=HomePage;
+          this.rootPage=TournamentsPage;//HomePage;
       });
 
       

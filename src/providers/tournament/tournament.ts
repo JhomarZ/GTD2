@@ -20,6 +20,12 @@ export class TournamentProvider {
     .map(res => res);
   }
 
+  getTournamentsList(userId,rows):Observable<any>{
+    console.log(SERVER_NAME+"Tourney.aspx?t=list&uId=15&rs="+rows+"&rc=5");
+    return this.http.get(SERVER_NAME+"Tourney.aspx?t=list&uId=15&rs="+rows+"&rc=5")
+    .map(res => res);
+  }
+  
   private handleError(error) {
     this.errorObserver.next(error);
     return Observable.throw(error.json().error || 'Server error');

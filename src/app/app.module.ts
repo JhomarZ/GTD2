@@ -11,12 +11,14 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { FavoritesPage } from '../pages/favorites/favorites';
+import { TournamentsPage } from '../pages/tournaments/tournaments';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuhtProvider } from '../providers/auht/auht';
 import { PlayerProvider } from '../providers/player/player';
 import { TournamentProvider } from '../providers/tournament/tournament';
+
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -29,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
     LoginPage,
     RegisterPage,
     FavoritesPage,
+    TournamentsPage,
     TabsPage    
   ],
   imports: [
@@ -46,6 +49,7 @@ import {HttpClientModule} from '@angular/common/http';
     LoginPage,
     RegisterPage,
     FavoritesPage,
+    TournamentsPage,
     TabsPage
   ],
   providers: [
