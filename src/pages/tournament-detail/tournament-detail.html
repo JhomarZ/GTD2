@@ -1,0 +1,123 @@
+<!--
+  Generated template for the TournamentDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Copa Movistar 2018</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+    <ion-slides pager="false" padding >
+
+      <ion-slide >
+          <ion-list>
+            <ion-row>
+              <ion-col col-12 >
+                <ion-row>
+                  <ion-col col-4>
+                    Posiciones
+                  </ion-col >
+                  <ion-col col-4>
+                    Próximos
+                  </ion-col >
+                  <ion-col col-4>
+                      Goleadores
+                  </ion-col >
+                </ion-row>
+              </ion-col>
+              <ion-col col-12 *ngFor="let feed of nextMatches" >
+                <b>{{feed.lastStartDate}}</b>
+                  <ion-card class="card-match">
+                    <ion-item class="head">
+                      <ion-row>
+                        <ion-col col-8>
+                          <img item-start src="./assets/imgs/tournament/cup.png" >
+                          &nbsp; {{feed.TournamentSN}}
+                        </ion-col>
+                        <ion-col col-4>
+                          <span style="float:right;">{{feed.Category}}</span>
+                        </ion-col>
+                      </ion-row>
+                    </ion-item>
+          
+                    <ion-card-content class="content-card">
+                      <ion-row>
+                        <ion-col class="team" col-4>
+                            <ion-row>
+                              <ion-col  col-12>
+                                <img src="{{feed.LogoTeam1}}" >
+                              </ion-col>
+                              <ion-col class="name" col-12>
+                                {{feed.Team1SN}}
+                              </ion-col>
+                            </ion-row>
+                        </ion-col>
+                        <ion-col col-4>
+                          <ion-row>
+                            <ion-col col-4 ><h2 class="score">{{feed.PointsTeam1}}</h2></ion-col>
+                            <ion-col col-4 class="vs">VS</ion-col>
+                            <ion-col col-4 ><h2 class="score">{{feed.PointsTeam2}}</h2></ion-col>
+                            <ion-col col-12 class="status">{{feed.status}}</ion-col>
+                          </ion-row>
+                        </ion-col>
+                        <ion-col col-4>
+                            <ion-row class="team">
+                              <ion-col col-12 >
+                                <img src="{{feed.LogoTeam2}}" > 
+                              </ion-col>
+                              <ion-col col-12 class="name">
+                                {{feed.Team2SN}}
+                              </ion-col>
+                            </ion-row>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-content>
+          
+                    <ion-row class="footer" >
+                      <ion-col col-8>
+                        <ion-row >
+                          <ion-col col-12>
+                            <img item-start src="./assets/icon/calendar.png" >
+                            &nbsp;{{feed.StartDate}}
+                          </ion-col>
+                          <ion-col col-12>
+                            <img item-start src="./assets/icon/location-point.png" >
+                            &nbsp;{{feed.TournamentGUID}}
+                            
+                          </ion-col>
+                        </ion-row>
+                      </ion-col>
+                      <ion-col col-4>
+                          <button ion-button small>Resumen</button>
+                      </ion-col>
+                    
+                    </ion-row>
+          
+                  </ion-card>
+          
+                
+              </ion-col>
+            </ion-row>
+          </ion-list>
+      </ion-slide>
+    
+      <ion-slide style="background-color: blue">
+        <h2>Slide 2</h2>
+      </ion-slide>
+    
+      <ion-slide style="background-color: red">
+        <h2>Slide 3</h2>
+      </ion-slide>
+    
+    </ion-slides>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

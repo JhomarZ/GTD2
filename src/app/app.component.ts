@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { AboutPage } from '../pages/about/about';
 import { TournamentsPage } from '../pages/tournaments/tournaments';
 import { RegisterPage } from '../pages/register/register';
+import { TournamentDetailPage } from '../pages/tournament-detail/tournament-detail';
 import { AuhtProvider } from '../providers/auht/auht';
 
 @Component({
@@ -32,7 +33,7 @@ export class MyApp {
       // verifica si un usuario ya esta logeado y lo redirecciona la home
       this.storage.get('user').then((user) => {
         if(user!=null)
-          this.rootPage=TournamentsPage;//HomePage;
+          this.rootPage=TournamentDetailPage;//HomePage;
       });
 
       

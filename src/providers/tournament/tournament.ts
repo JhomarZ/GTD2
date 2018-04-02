@@ -25,6 +25,12 @@ export class TournamentProvider {
     return this.http.get(SERVER_NAME+"Tourney.aspx?t=list&uId=15&rs="+rows+"&rc=5")
     .map(res => res);
   }
+
+  getNextMatches(userId,tournamentGuid,rows):Observable<any>{
+    console.log(SERVER_NAME+"Match.aspx?t=previous&uId=15&tg="+tournamentGuid+"&rs="+rows+"&rc=5");
+    return this.http.get(SERVER_NAME+"Match.aspx?t=previous&uId=15&tg="+tournamentGuid+"&rs="+rows+"&rc=5")
+    .map(res => res);
+  }
   
   private handleError(error) {
     this.errorObserver.next(error);

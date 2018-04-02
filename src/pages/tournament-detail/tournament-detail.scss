@@ -1,0 +1,82 @@
+page-tournament-detail {
+
+    ion-slides {
+        height: auto;
+      }
+
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets
+    {
+        display: flex;
+        justify-content: space-between;
+        top: 5px;
+    }
+    
+    .card-content-md {
+        padding: 0px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    .card-match{
+        .item-md{
+            padding-left: 0px;
+        }
+        .head{
+            font-size: 1.5rem;
+            img{
+                width:14px;
+                float:left;
+                margin:0px;
+            }
+            ion-label{
+                margin: 0px;
+            }
+        }
+        .content-card{
+            text-align: center;
+            .team{
+                text-align: -webkit-center;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                img{
+                    width:35px;
+                    margin:0px;
+                }
+                .name{
+                    line-height: 1;
+                }
+            }
+            .score{
+                font-size:2.5rem;
+                font-weight: 800;
+            }
+            .vs{
+                font-size:1.5rem; 
+                color:#253679;
+                font-weight: 800;
+            }
+            .status{
+                background-color:  #e0e0e0;
+                font-weight: 800;
+            }
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            border-top: 1px solid #e0e0e0;
+            font-size: 1.3rem;
+            color: #999;
+            img{
+                width:14px;
+                float:left;
+                margin:0px;
+            }
+            .col{
+                padding: 2px;
+            }
+        }
+
+    }
+
+}

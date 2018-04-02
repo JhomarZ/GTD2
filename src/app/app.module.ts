@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { FavoritesPage } from '../pages/favorites/favorites';
 import { TournamentsPage } from '../pages/tournaments/tournaments';
+import { TournamentDetailPage } from '../pages/tournament-detail/tournament-detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,6 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterPage,
     FavoritesPage,
     TournamentsPage,
+    TournamentDetailPage,
     TabsPage    
   ],
   imports: [
@@ -50,6 +52,7 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterPage,
     FavoritesPage,
     TournamentsPage,
+    TournamentDetailPage,
     TabsPage
   ],
   providers: [
